@@ -18,10 +18,18 @@ def aleaPoids():
 			tab[i][j] = random.uniform(0,1)
 	return tab
 			
-
+def propagation(poids,retine):
+	sortie = 0
+	for i in range(4):
+		for j in range(5):
+			sortie = sortie + poids[i][j]*retine[i][j]
+	#Biais
+	sortie = sortie + random.uniform(0,1)
+	return sortie
+	
 if __name__ == '__main__' :
 	c = copieInRetine('c')
 	a = copieInRetine('a')
 	poids = aleaPoids();
 
-	neuroneSortie
+	print(propagation(poids,a))
